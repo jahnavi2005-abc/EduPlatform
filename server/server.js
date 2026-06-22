@@ -427,7 +427,7 @@ const startServer = async () => {
 // ========== Cluster Mode (Production Only) ==========
 
 if (isProduction && cluster.isPrimary) {
-  const numCPUs = os.cpus().length;
+  const numCPUs = 1; // Limited to 1 for free tier
   console.log(`🖥️  Master ${process.pid} is running`);
   console.log(`🔢 Forking ${numCPUs} workers...`);
 
